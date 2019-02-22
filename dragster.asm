@@ -1,8 +1,8 @@
 ; Disassembly of dragster.a26
-; Disassembled Fri Feb 22 11:26:00 2019
+; Disassembled Fri Feb 22 12:00:28 2019
 ; Using DiStella v3.01a
 ;
-; Command Line: distella dragster.a26 
+; Command Line: distella -a dragster.a26 
 ;
 
 VSYNC   =  $00
@@ -151,9 +151,9 @@ LF0A7: LDY    $8E
        LDA    $D8     
        NOP            
        LDA    $8E     
-       LSR    A       
-       LSR    A       
-       LSR    A       
+       LSR            
+       LSR            
+       LSR            
        TAY            
        LDA    LF6D0,Y 
        STA    PF0     
@@ -254,32 +254,32 @@ LF181: LDA    $8C
        LDY    #$50    
        AND    #$F0    
        BEQ    LF195   
-       LSR    A       
+       LSR            
        TAY            
 LF195: STA    WSYNC   
        TYA            
        STA    $90     
        LDA    $B3,X   
        AND    #$0F    
-       ASL    A       
-       ASL    A       
-       ASL    A       
+       ASL            
+       ASL            
+       ASL            
        STA    $92     
        LDA    $B5,X   
        AND    #$F0    
-       LSR    A       
+       LSR            
        STA    $96     
        LDA    $8D     
        BEQ    LF1B6   
        AND    #$F0    
-       LSR    A       
+       LSR            
        ADC    #$08    
        JMP    LF1BD   
 LF1B6: LDA    $B5,X   
        AND    #$0F    
-       ASL    A       
-       ASL    A       
-       ASL    A       
+       ASL            
+       ASL            
+       ASL            
 LF1BD: STA    $94     
        LDA    #$0C    
        LDY    $CC,X   
@@ -287,9 +287,9 @@ LF1BD: STA    $94
        TYA            
        BNE    LF1CA   
        LDA    #$0B    
-LF1CA: ASL    A       
-       ASL    A       
-       ASL    A       
+LF1CA: ASL            
+       ASL            
+       ASL            
        STA    $98     
        LDA    #$07    
        LDY    $B5,X   
@@ -326,7 +326,7 @@ LF209: LDA    $88
        STA    COLUPF  
        INC    $AA     
        LDA    $AA     
-       LSR    A       
+       LSR            
        BCC    LF217   
        JMP    LF051   
 LF217: LDA    #$0F    
@@ -410,7 +410,7 @@ LF2B0: LDA    #$00
        AND    #$F7    
        TAY            
        LDA    $B9     
-       ASL    A       
+       ASL            
 LF2BD: STA    $84     
        STY    $85     
        LDA    #$19    
@@ -421,10 +421,10 @@ LF2BD: STA    $84
        AND    #$0F    
        STA    $AE     
        TYA            
-       LSR    A       
-       LSR    A       
-       LSR    A       
-       LSR    A       
+       LSR            
+       LSR            
+       LSR            
+       LSR            
        STA    $AD     
        LDA    $A8     
        ORA    $A9     
@@ -433,12 +433,12 @@ LF2BD: STA    $84
        CMP    #$07    
        BEQ    LF2E9   
 LF2E3: LDA    SWCHB   
-       LSR    A       
+       LSR            
        BCS    LF2EE   
 LF2E9: LDX    #$B9    
        JMP    LF004   
 LF2EE: LDY    #$00    
-       LSR    A       
+       LSR            
        BCS    LF31C   
        LDA    $B0     
        BEQ    LF2FB   
@@ -467,7 +467,7 @@ LF31E: LDA    $8D
        DEC    $8D     
        BNE    LF32E   
        LDX    #$05    
-       LSR    A       
+       LSR            
 LF329: STA    $B3,X   
        DEX            
        BPL    LF329   
@@ -509,9 +509,9 @@ LF367: LDA    $C0,X
        BCC    LF374   
        INC    $BA,X   
 LF374: LDA    $C0,X   
-       ROL    A       
-       ROL    A       
-       ROL    A       
+       ROL            
+       ROL            
+       ROL            
        AND    #$03    
        TAY            
        LDA    LF6C8,Y 
@@ -588,7 +588,7 @@ LF401: LDA    #$00
        CMP    #$14    
 LF40C: DEY            
        BEQ    LF413   
-       ROL    A       
+       ROL            
        JMP    LF40C   
 LF413: STA    $D8     
        CMP    $C0,X   
@@ -633,7 +633,7 @@ LF458: INC    $CC,X
        LDA    #$04    
 LF464: STA    $CC,X   
 LF466: LDA    $80     
-       LSR    A       
+       LSR            
        BCC    LF4A4   
        LDA    $CE,X   
        BNE    LF4A4   
@@ -643,10 +643,10 @@ LF466: LDA    $80
        AND    #$06    
        BNE    LF4A4   
        LDA    $AD,X   
-       LSR    A       
+       LSR            
        BCS    LF480   
        DEC    $AB,X   
-LF480: LSR    A       
+LF480: LSR            
        BCS    LF485   
        INC    $AB,X   
 LF485: LDA    $82     
@@ -666,11 +666,11 @@ LF49A: CPY    #$08
        INC    $CA,X   
 LF4A2: STY    $AB,X   
 LF4A4: LDA    $82     
-       ASL    A       
-       ASL    A       
-       ASL    A       
+       ASL            
+       ASL            
+       ASL            
        EOR    $82     
-       ASL    A       
+       ASL            
        ROL    $82     
        TXA            
        ORA    #$0A    
@@ -697,7 +697,7 @@ LF4D1: DEY
        BMI    LF4E2   
        LDA    $9C,X   
        ORA    #$08    
-       ASL    A       
+       ASL            
        STA    $9C,X   
        ROR    $9E,X   
        ROL    $A0,X   
@@ -715,10 +715,10 @@ LF4EB: LDY    $8C
        AND    #$0F    
        STA    $D8     
        TYA            
-       LSR    A       
-       LSR    A       
-       LSR    A       
-       LSR    A       
+       LSR            
+       LSR            
+       LSR            
+       LSR            
        TAY            
        CLC            
        ADC    $D8     
@@ -727,10 +727,10 @@ LF4EB: LDY    $8C
        SBC    #$0F    
        INY            
 LF509: EOR    #$07    
-       ASL    A       
-       ASL    A       
-       ASL    A       
-       ASL    A       
+       ASL            
+       ASL            
+       ASL            
+       ASL            
        STA    HMP0,X  
        STA    WSYNC   
 LF513: DEY            
